@@ -172,7 +172,6 @@ int main(void)
     buildHashFromCharList(charHead, table);
 
     printHashTable(table);
-
     freeHashTable(table);
     freeCharList(charHead);
 
