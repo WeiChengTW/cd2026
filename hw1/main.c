@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
     //     cd2026_ = cd2026 + 1;
     // }
 
-    const char *fileName = "main.c";
+    const char *fileName = "input.c";
     FILE *file;
     int ch;
 
