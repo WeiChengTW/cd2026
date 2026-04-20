@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 #define TABLE_SIZE 257
 
@@ -22,6 +21,11 @@ static unsigned int hashChar(unsigned char c)
     return c % TABLE_SIZE;
 }
 
+static int isPrintable(unsigned char c)
+{
+    return c >= 32 && c <= 126;
+}
+
 static void printChar(unsigned char c)
 {
     if (c == '\n')
@@ -32,7 +36,7 @@ static void printChar(unsigned char c)
         printf("\\r, ");
     else if (c == ' ')
         printf("[space], ");
-    else if (isprint(c))
+    else if (isPrintable(c))
         printf("%c, ", c);
     else
         printf("\\x%02X, ", c);
